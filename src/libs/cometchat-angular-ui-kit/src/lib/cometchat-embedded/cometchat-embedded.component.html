@@ -1,0 +1,51 @@
+<div class="topnav">
+  <div  >
+          <a *ngFor="let item of links"
+           href="#">{{item.name}}
+          </a>
+  </div>
+</div>
+
+<table class="survey-table table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Description</th>
+    <th scope="col">Number Votes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let vote of votes; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+      {{ vote.name }}
+    </td>
+    <td>{{ vote.number | number }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="chat-container">
+  <div class="cometchat-embedded-container">
+  
+    <div *ngIf=!showChat class="cometchat-embedded-sidebar">
+      <cometchat-sidebar [friendsOnly]=friendsOnly (actionPerformed)=handleSidebarEvents($event)
+        [actionRequired]="sidebarActions">
+      </cometchat-sidebar>
+    </div>
+    <div *ngIf=showChat class="cometchat-embedded-chat-screen">
+      <cometchat-conversation-screen (actionPerformed)=handleActionByConversationScreen($event) *ngIf=user
+        user={{json.stringify(user)}}>
+      </cometchat-conversation-screen>
+  
+      <cometchat-conversation-screen (actionPerformed)=handleActionByConversationScreen($event) *ngIf=group
+        group={{json.stringify(group)}}>
+      </cometchat-conversation-screen>
+    </div>
+  </div>
+  <app-calling-screen (actionPerformed)=handleCallScreenActions($event); inProgressCall={{inProgressCall}}
+    incomingScreen={{incomingScreen}}>
+  </app-calling-screen>
+  <a class="back-link" *ngIf=showChat (click)=toggleChat()>--Back to Contacts--</a>
+</div>
+

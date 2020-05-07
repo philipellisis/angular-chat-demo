@@ -1,0 +1,65 @@
+.survey-table {
+  margin: 1.5em;
+  width: 95%;
+}
+
+.back-link {
+  color: blue;
+  text-decoration: underline;
+  margin-left: 100px;
+  width: 400px;
+}
+.back-link:hover {
+  cursor: pointer;
+}
+
+.chat-container {
+  vertical-align: bottom;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 440px;
+  border: thick;
+  box-shadow: -4px -1px 8px 0px black
+}
+
+.cometchat-embedded-container {
+  display: flex;
+  width: 400px;
+  height: 400px;
+  padding-bottom: 0px;
+  background: white;
+}
+.cometchat-embedded-sidebar {
+  width: 400px;
+  height: 100%;
+}
+.cometchat-embedded-chat-screen {
+  width: 400px;
+  height: 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
